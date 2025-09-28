@@ -15,13 +15,6 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, cb) => {
-  // --- TAMBAHKAN BLOK DEBUGGING INI ---
-  console.log("--- DEBUGGING FILE UPLOAD ---");
-  console.log("Original Filename:", file.originalname);
-  console.log("Mimetype yang diterima server:", file.mimetype);
-  console.log("-----------------------------");
-  // ------------------------------------
-
   const allowedFileTypes = /jpeg|jpg|png/;
   const mimetype = allowedFileTypes.test(file.mimetype);
   const extname = allowedFileTypes.test(
